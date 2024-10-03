@@ -44,7 +44,11 @@ const App: React.FC = () => {
           </div> */}
           <button type="submit">Enter</button>
           {showError?
-          <p id="message">Please enter in a password.</p> : <div></div>
+          <div>
+          <p id="message">Please enter in a password.</p> 
+          <img id="richard" src="richard.png"></img>
+          </div>
+          : <div></div>
           }
         </form>
       )}
