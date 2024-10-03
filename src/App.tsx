@@ -5,12 +5,14 @@ const App: React.FC = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    setShowError(true);
     if (name && password) {
       setIsLoggedIn(true);
-    }
+    } 
   };
 
   return (
@@ -30,7 +32,7 @@ const App: React.FC = () => {
               required
             />
           </div>
-          <div>
+          {/* <div>
             <label htmlFor="password">Password:</label>
             <input
               type="password"
@@ -39,8 +41,11 @@ const App: React.FC = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-          </div>
+          </div> */}
           <button type="submit">Enter</button>
+          {showError?
+          <p id="message">Please enter in a password.</p> : <div></div>
+          }
         </form>
       )}
     </div>
